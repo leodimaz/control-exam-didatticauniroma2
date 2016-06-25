@@ -8,7 +8,7 @@ Basta fare il refresh delle pagine su didattica, ci sono le email che possono av
 <b>requests</b> (http://docs.python-requests.org/en/master/user/install/#install) <br />
 <b>BeautifulSoup</b> (https://www.crummy.com/software/BeautifulSoup/) <br />
 3) Modificare il file control.py con i dati relativi alla propria casella di posta gmail<br />
-3) In ambiente Linux o OsX lanciare i seguenti comandi:<br />
+4) In ambiente Linux o OsX lanciare i seguenti comandi:<br />
 <b>crontab -e</b><br />
 <b>i</b><br />
 <b>*/10 * * * * /usr/bin/python /path/del/file/esame.py</b><br />
