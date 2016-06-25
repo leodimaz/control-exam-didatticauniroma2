@@ -2,9 +2,9 @@ from BeautifulSoup import BeautifulSoup
 import requests
 import os.path
 
-#section url
-url = "link didattica uniroma2 da controllare"
-#section gmail
+#sezione url
+url = "link didattica uniroma2 da controllare" #http://didattica.uniroma2.it/files/index/insegnamento/nomedelcorso
+#sezione gmail (per ora funziona solamente con questo provider di posta)
 fromaddr = "youremail"
 toaddrs  = "youremail"
 username = "username"
