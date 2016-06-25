@@ -18,5 +18,5 @@ Basta fare il refresh delle pagine su didattica, ci sono le email che possono av
 
 Ogni 10 minuti il sistema eseguirà il programma e controllerà se è stato aggiunto un nuovo file sul link di didatticaweb. In caso di esito positivo arriverà un'email di notifica relativa al nuovo file inserito<br />
 
-Ci tengo a precisare che lo script è stato creato per necessità personali e che quindi per ora funziona solamente con caselle di posta gmail e siti web come didattica2.0
+Ci tengo a precisare che lo script è stato creato per necessità personali e che quindi per ora funziona solamente con caselle di posta gmail e siti web del tipo http://didattica.uniroma2.it/files/index/insegnamento/nomedelcorso
 
