@@ -1,5 +1,5 @@
 # control-exam-didatticauniroma2
-Basta fare il refresh delle pagine su didattica, ci sono le email che possono avvisarti
+Basta fare il refresh delle pagine su didattica, da oggi puoi essere avvisato via email
 
 # istruzioni
 
