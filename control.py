@@ -29,6 +29,7 @@ def check():
 		last_insert = trs[0].text
 		last_insert_href = "http://didattica.uniroma2.it"+trs[0]['href']
 		sendmail(last_insert, last_insert_href)
+		first()
 
 def first():
 	file = open("db.txt","w")
