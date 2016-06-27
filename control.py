@@ -6,7 +6,7 @@ urls = [
 'http://didattica.uniroma2.it/files/index/insegnamento/nomeinsegnamento1/id/desc/9999',
 'http://didattica.uniroma2.it/files/index/insegnamento/nomeinsegnamento2/id/desc/9999'
 ]
-#section gmail
+#sezione gmail da modificare con i vostri dati
 fromaddr = "tuaemail"
 toaddrs  = "tuaemail"
 username = "username"
