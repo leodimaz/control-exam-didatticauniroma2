@@ -21,7 +21,7 @@ def sendmail(name, link, url):
 	server.sendmail(fromaddr, toaddrs, msg)
 	server.quit()
 
-def check(url, line):
+def check(url, line, aorw):
 	file = open("db.txt","r")
 	lines = file.read().split("\n")[line]
 	r=requests.get(url)
@@ -32,10 +32,10 @@ def check(url, line):
 		last_insert = trs[0].text
 		last_insert_href = "http://didattica.uniroma2.it"+trs[0]['href']
 		sendmail(last_insert, last_insert_href, url)
-		first(url)
+		first(url, aorw)
 
-def first(url):
-	file = open("db.txt","a")
+def first(url, aorw):
+	file = open("db.txt",aorw)
 	r=requests.get(url)
 	soup = BeautifulSoup(r.text)
 	trs = [tr.text for tr in soup.findAll('tr',attrs={'class':'even'})]
@@ -46,11 +46,16 @@ def main():
 	current_line = 0
 	if os.path.isfile("db.txt"):
 		for url in urls:
-			check(url, current_line)
-			current_line = current_line + 1
+			if current_line > 0:
+				check(url, current_line, "a")
+				current_line = current_line + 1
+			else:
+				check(url, current_line, "w")
+				current_line = current_line + 1
 	else:
 		for url in urls:
-			first(url)
+			first(url, "a")
 
 if __name__ == "__main__":
 	main()
+
