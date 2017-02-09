@@ -1,24 +1,28 @@
 from BeautifulSoup import BeautifulSoup
 import requests
 import os.path
+
 #sezione multiurl, includere la parte finale /id/desc/9999
 urls = [
-'http://didattica.uniroma2.it/files/index/insegnamento/nomeinsegnamento1/id/desc/9999',
-'http://didattica.uniroma2.it/files/index/insegnamento/nomeinsegnamento2/id/desc/9999'
+'http://didatticaweb.uniroma2.it/files/index/insegnamento/Insegnamento1/id/desc/9999',
+'http://didatticaweb.uniroma2.it/files/index/insegnamento/Insegnamento2/id/desc/9999'
 ]
+
 #sezione gmail da modificare con i vostri dati
-fromaddr = "tuaemail"
-toaddrs  = "tuaemail"
-username = "username"
-password = "password"
+username = "USERNAME"
+password = "PASSWORD"
+fromaddr = "TUAEMAIL"
+toaddrs  = ['email1','email2',,'emailn']
 
 def sendmail(name, link, url):
+	print "[+] Invio email..."
 	import smtplib
 	msg = "[  ] Potrebbero essere usciti i risultati\n[  ] Titolo delll'ultimo file inserito: "+str(name)+"\n[+] "+str(link)+"\n[+] "+url
 	server = smtplib.SMTP("smtp.gmail.com:587")
 	server.starttls()
 	server.login(username,password)
-	server.sendmail(fromaddr, toaddrs, msg)
+	for email in toaddrs:
+		server.sendmail(fromaddr, email, msg)
 	server.quit()
 
 def check(url, line, aorw):
@@ -42,6 +46,7 @@ def first(url, aorw):
 	file.write(str(len(trs))+"\n")
 	file.close()
 
+#main
 def main():
 	current_line = 0
 	if os.path.isfile("db.txt"):
@@ -58,4 +63,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-
