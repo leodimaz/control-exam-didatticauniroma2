@@ -5,14 +5,15 @@ import os.path
 #sezione multiurl, includere la parte finale /id/desc/9999
 urls = [
 'http://didatticaweb.uniroma2.it/files/index/insegnamento/Insegnamento1/id/desc/9999',
-'http://didatticaweb.uniroma2.it/files/index/insegnamento/Insegnamento2/id/desc/9999'
+'http://didatticaweb.uniroma2.it/files/index/insegnamento/Insegnamento2/id/desc/9999',
+'http://didatticaweb.uniroma2.it/files/index/insegnamento/InsegnamentoN/id/desc/9999'
 ]
 
 #sezione gmail da modificare con i vostri dati
 username = "USERNAME"
 password = "PASSWORD"
 fromaddr = "TUAEMAIL"
-toaddrs  = ['email1','email2',,'emailn']
+toaddrs  = ['email1','email2','emailn']
 
 def sendmail(name, link, url):
 	print "[+] Invio email..."
