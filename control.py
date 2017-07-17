@@ -34,7 +34,7 @@ def check(url, line, aorw):
 	trs = [tr.find("td").find("a") for tr in soup.findAll('tr',attrs={'class':'even'})]
 	#print str(len(trs))+">"+str(int(lines))+"?"
 	if len(trs)>int(lines):
-		last_insert = trs[0].text
+		last_insert = trs[0].text.encode('utf-8').strip()
 		last_insert_href = "http://didattica.uniroma2.it"+trs[0]['href']
 		sendmail(last_insert, last_insert_href, url)
 		first(url, aorw)
