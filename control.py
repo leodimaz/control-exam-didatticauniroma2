@@ -4,9 +4,9 @@ import os.path
 
 #sezione multiurl, includere la parte finale /id/desc/9999
 urls = [
-'http://didattica.uniroma2.it/files/index/insegnamento/insegnamento1/id/desc/9999',
-'http://didattica.uniroma2.it/files/index/insegnamento/insegnamento2/id/desc/9999',
-'http://didattica.uniroma2.it/files/index/insegnamento/insegnamento3/id/desc/9999'
+"http://didattica.uniroma2.it/files/index/insegnamento/insegnamento1/id/desc/9999",
+"http://didattica.uniroma2.it/files/index/insegnamento/insegnamento2/id/desc/9999",
+"http://didattica.uniroma2.it/files/index/insegnamento/insegnamento3/id/desc/9999"
 ]
 
 #sezione gmail/hotmail da modificare con i vostri dati
