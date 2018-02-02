@@ -4,26 +4,34 @@ import os.path
 
 #sezione multiurl, includere la parte finale /id/desc/9999
 urls = [
-'http://didatticaweb.uniroma2.it/files/index/insegnamento/Insegnamento1/id/desc/9999',
-'http://didatticaweb.uniroma2.it/files/index/insegnamento/Insegnamento2/id/desc/9999',
-'http://didatticaweb.uniroma2.it/files/index/insegnamento/InsegnamentoN/id/desc/9999'
+'http://didattica.uniroma2.it/files/index/insegnamento/insegnamento1/id/desc/9999',
+'http://didattica.uniroma2.it/files/index/insegnamento/insegnamento2/id/desc/9999',
+'http://didattica.uniroma2.it/files/index/insegnamento/insegnamento3/id/desc/9999'
 ]
 
-#sezione gmail da modificare con i vostri dati
-username = "USERNAME"
-password = "PASSWORD"
-fromaddr = "TUAEMAIL"
-toaddrs  = ['email1','email2','emailn']
+#sezione gmail/hotmail da modificare con i vostri dati
+username = "#"
+password = "#"
+fromaddr = "#"
+toaddrs  = ["email1","email2","email3"]
+subject = "Notifica risultati esame"
 
 def sendmail(name, link, url):
 	print "[+] Invio email..."
 	import smtplib
-	msg = "[  ] Potrebbero essere usciti i risultati\n[  ] Titolo delll'ultimo file inserito: "+str(name)+"\n[+] "+str(link)+"\n[+] "+url
-	server = smtplib.SMTP("smtp.gmail.com:587")
+	import email
+	if "@hotmail" in username:
+		server = smtplib.SMTP("smtp.live.com:587")
+	elif "@gmail" in username:
+		server = smtplib.SMTP("smtp.gmail.com:587")
 	server.starttls()
 	server.login(username,password)
+	msg = email.message_from_string("[  ] Potrebbero essere usciti i risultati\n[  ] Titolo delll'ultimo file inserito: "+str(name)+"\n[+] "+str(link)+"\n[+] "+url)
+	msg["From"] = fromaddr
+	msg["Subject"] = subject
 	for email in toaddrs:
-		server.sendmail(fromaddr, email, msg)
+		msg["To"] = email
+		server.sendmail(fromaddr, email, msg.as_string())
 	server.quit()
 
 def check(url, line, aorw):
