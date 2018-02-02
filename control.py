@@ -24,6 +24,9 @@ def sendmail(name, link, url):
 		server = smtplib.SMTP("smtp.live.com:587")
 	elif "@gmail" in username:
 		server = smtplib.SMTP("smtp.gmail.com:587")
+	else:
+		print "[-] Impossibile spedire email di notifica"
+		return
 	server.starttls()
 	server.login(username,password)
 	msg = email.message_from_string("[  ] Potrebbero essere usciti i risultati\n[  ] Titolo delll'ultimo file inserito: "+str(name)+"\n[+] "+str(link)+"\n[+] "+url)
